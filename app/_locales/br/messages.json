@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Não é uma extensão de meme",
+    "description": "Nome da extensão"
+  },
+  "appDescription": {
+    "message": "Reage recursivamente em comentários do Facebook para que outros possam voltar ao post depois.",
+    "description": "Descrição da extensão"
+  }
+}

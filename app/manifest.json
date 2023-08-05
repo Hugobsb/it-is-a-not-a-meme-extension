@@ -1,49 +1,36 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
-  "manifest_version": 2,
   "description": "__MSG_appDescription__",
+  "version": "0.1.0",
+  "manifest_version": 3,
   "icons": {
     "16": "images/icon-16.png",
+    "32": "images/icon-19.png",
+    "48": "images/icon-38.png",
     "128": "images/icon-128.png"
   },
-  "default_locale": "en",
+  "author": "hugo.bsbenedicto@gmail.com",
+  "default_locale": "br",
   "background": {
-    "scripts": [
-      "libs/polyfill.min.js",
-      "scripts/chromereload.js",
-      "scripts/background.js"
-    ]
+    "service_worker": "scripts/background.js"
   },
-  "permissions": [
-    "tabs",
-    "http://*/*",
-    "https://*/*",
-    "webNavigation"
-  ],
-  "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": [
-        "scripts/contentscript.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": false
-    }
-  ],
-  "page_action": {
+  "action": {
+    "default_popup": "popup.html",
     "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
-    },
-    "default_title": "nao-eh-uma-extensao-de-meme",
-    "default_popup": "popup.html"
-  }
+      "16": "/images/icon-16.png",
+      "32": "/images/icon-19.png",
+      "48": "/images/icon-38.png",
+      "128": "/images/icon-128.png"
+    }
+  },
+  "options_page": "options.html",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.facebook.com/*"
+  ]
 }
